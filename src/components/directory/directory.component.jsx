@@ -45,6 +45,7 @@ export default function Directory() {
         title={items.title}
         imageUrl={items.imageUrl}
         size={items.size}
+        linkUrl={items.linkUrl}
       />
     );
   });
