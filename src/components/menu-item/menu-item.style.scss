@@ -1,3 +1,5 @@
+$break-small: 415px;
+
 .menu-item {
   min-width: 30%;
   height: 280px;
@@ -8,6 +10,10 @@
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+
+  @media screen and (max-width: $break-small) {
+    min-width: 100%;
+  }
 
   &:hover {
     cursor: pointer;
@@ -25,6 +31,10 @@
 
   &.large {
     height: 420px;
+
+    @media screen and (max-width: $break-small) {
+      height: 281.6px;
+    }
   }
 
   &:first-child {
