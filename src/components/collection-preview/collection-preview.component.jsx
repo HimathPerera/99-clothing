@@ -4,7 +4,7 @@ import "./collection-preview.styles.scss";
 
 export default function Collection({ title, items }) {
   return (
-    <div className="classname-preview">
+    <div className="collection-preview">
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
         {items

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import SHOP_DATA from "./shop.data";
 import Collection from "../../components/collection-preview/collection-preview.component";
+import "./shoppage.styles.scss";
 
 export default function ShopPage() {
-  const [collection] = useState(SHOP_DATA);
+  const [collection_data] = useState(SHOP_DATA);
 
   return (
     <div className="shop-page">
-      {collection.map((items) => (
+      {collection_data.map((items) => (
         <Collection
           key={items.id}
           title={items.title}
