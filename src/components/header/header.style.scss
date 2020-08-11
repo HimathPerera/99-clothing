@@ -3,11 +3,13 @@
   height: 70px;
   width: 100%;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 
   .logo {
     width: 100px;
     height: 100%;
+    position: relative;
+    top: 5px;
   }
   .options {
     width: 50%;
@@ -18,5 +20,6 @@
   }
   .option {
     padding: 15px;
+    cursor: pointer;
   }
 }
