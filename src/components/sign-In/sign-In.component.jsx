@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../custom-button/custom-button.component";
 import Input from "../custom-input/custom-input.component";
 import { signInWithGoogle } from "../../firebase/firebase.util";
+import firebase from "firebase/app";
 
 import "./sign-In.style.scss";
 
@@ -17,7 +18,7 @@ export default function SignIn() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(cred);
+    firebase.auth().signInWithEmailAndPassword(cred.email, cred.password);
   };
 
   return (
