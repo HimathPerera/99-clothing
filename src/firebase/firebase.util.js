@@ -20,12 +20,12 @@ export const firestore = firebase.firestore();
 var provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-//created user doc in firebase
+//create user doc in firebase
 export const createUserProfile = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users /${userAuth.uid}`);
-  const snapshot = await userRef.get();
+  const userRef = firestore.doc(`users /${userAuth.uid}`); //real uid comes here
+  const snapshot = await userRef.get(); //get it and store it in snapshot variable
 
   if (!snapshot.exists) {
     const { displayName, email } = userAuth;

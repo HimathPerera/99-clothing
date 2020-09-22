@@ -18,7 +18,9 @@ export default function SignIn() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(cred.email, cred.password);
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(cred.signinEmail, cred.signinPassword);
   };
 
   return (
@@ -30,25 +32,25 @@ export default function SignIn() {
         <Input
           name="email"
           type="email"
-          id="email"
-          label="hello"
-          data={cred.email}
+          id="signinEmail"
+          label="email"
+          data={cred.signinEmail}
           required
           onChange={handleChange}
         />
         <Input
           name="password"
           type="password"
-          id="password"
-          label="hello"
-          data={cred.password}
+          id="signinPassword"
+          label="password"
+          data={cred.signinPassword}
           required
           onChange={handleChange}
         />
         <div className="buttons">
           <Button onSubmit={handleClick}>Sign in</Button>
           <Button onClick={signInWithGoogle} isgoogle>
-            Signin with Google{" "}
+            Signin with Google
           </Button>
         </div>
       </form>

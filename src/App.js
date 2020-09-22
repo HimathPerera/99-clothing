@@ -10,7 +10,7 @@ import "./App.css";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
-  console.log(currentUser);
+
   //using effect hook
   useEffect(() => {
     auth.onAuthStateChanged(async (userAuth) => {
