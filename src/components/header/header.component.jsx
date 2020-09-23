@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assests/99.svg";
 import { auth } from "../../firebase/firebase.util";
+import ReactTooltip from "react-tooltip";
 import "./header.style.scss";
 
 export default function Header({ currentUser }) {
@@ -48,7 +49,14 @@ export default function Header({ currentUser }) {
           <div
             className="profileContainer"
             style={{ backgroundColor: shuffledColor }}
+            data-tip={name}
           >
+            <ReactTooltip
+              effect="solid"
+              type="dark"
+              backgroundColor="white"
+              textColor="black"
+            />
             <Link to="/" className="profileAvatar">
               {initialsCaps}
             </Link>
