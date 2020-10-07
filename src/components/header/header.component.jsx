@@ -5,6 +5,7 @@ import { auth } from "../../firebase/firebase.util";
 import { connect } from "react-redux";
 
 import "./header.style.scss";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 const Header = ({ currentUser }) => {
   return (
@@ -35,6 +36,8 @@ const Header = ({ currentUser }) => {
           </Link>
         )}
         {currentUser ? <Link to="/">{currentUser.displayName}</Link> : <></>}
+
+        <CartIcon />
       </div>
     </div>
   );
