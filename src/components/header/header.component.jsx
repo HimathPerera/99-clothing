@@ -2,22 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assests/99.svg";
 import { auth } from "../../firebase/firebase.util";
-import ReactTooltip from "react-tooltip";
+import { connect } from "react-redux";
+
 import "./header.style.scss";
 
-export default function Header({ currentUser }) {
-  let avatarColors = ["#aafc5d", "#ff9ee7", "#8126ff", "#f5db47"];
-  var shuffledColor =
-    avatarColors[Math.floor(Math.random() * avatarColors.length)];
-  if (currentUser.displayName) {
-    var name = currentUser.displayName;
-    var firstLetter = name.substr(0, 1);
-    var split = name.split(" ");
-    var secondLetter = split[1].substr(0, 1);
-    var initials = firstLetter.concat(secondLetter);
-    var initialsCaps = initials.toLocaleUpperCase();
-  }
-
+const Header = ({ currentUser }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -31,7 +20,7 @@ export default function Header({ currentUser }) {
           CONTACT
         </Link>
 
-        {currentUser.id ? (
+        {currentUser ? (
           <div
             className="option"
             onClick={() => {
@@ -45,26 +34,13 @@ export default function Header({ currentUser }) {
             SIGN IN
           </Link>
         )}
-        {currentUser.id ? (
-          <div
-            className="profileContainer"
-            style={{ backgroundColor: shuffledColor }}
-            data-tip={name}
-          >
-            <ReactTooltip
-              effect="solid"
-              type="dark"
-              backgroundColor="white"
-              textColor="black"
-            />
-            <Link to="/" className="profileAvatar">
-              {initialsCaps}
-            </Link>
-          </div>
-        ) : (
-          <></>
-        )}
+        {currentUser ? <Link to="/">{currentUser.displayName}</Link> : <></>}
       </div>
     </div>
   );
-}
+};
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);

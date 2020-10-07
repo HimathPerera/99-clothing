@@ -30,7 +30,7 @@ export default function Signup() {
 
       createUserProfile(user, { displayName });
     } catch (error) {
-      console.log("125", error);
+      console.log("500", error);
     }
   };
 
