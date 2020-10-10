@@ -6,6 +6,7 @@ $break-small: 415px;
   flex-direction: column;
   height: 350px;
   align-items: center;
+  position: relative;
 
   .image {
     width: 100%;
@@ -13,6 +14,13 @@ $break-small: 415px;
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+  }
+  .custom-button {
+    position: absolute;
+    bottom: 50px;
+    opacity: 0.8;
+    width: 80%;
+    display: none;
   }
 
   .collection-footer {
@@ -38,5 +46,15 @@ $break-small: 415px;
 
   @media screen and (max-width: $break-small) {
     height: 150px;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.8;
+    }
+    .custom-button {
+      display: block;
+      opacity: 0.85;
+    }
   }
 }

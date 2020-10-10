@@ -21,7 +21,7 @@ export default function Signup() {
       alert("passwords don't match!");
       return;
     }
-    var displayName = cred.firstName + " " + cred.lastName;
+    var displayName = cred.Name;
     e.preventDefault();
     try {
       const { user } = await firebase
@@ -68,23 +68,15 @@ export default function Signup() {
           onChange={handleChange}
         />
         <Input
-          name="first name"
+          name=" name"
           type="text"
-          id="firstName"
-          label="first name"
-          data={cred.firstName}
+          id="Name"
+          label=" name"
+          data={cred.Name}
           required
           onChange={handleChange}
         />
-        <Input
-          name="last name"
-          type="text"
-          id="lastName"
-          label="last name"
-          data={cred.lastName}
-          required
-          onChange={handleChange}
-        />
+
         <div className="buttons">
           <Button onSubmit={handleClick}>Sign Up</Button>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as ShoppingBag } from "../../assests/shoppingBag.svg";
 
 import { connect } from "react-redux";
-import cartActionToggle from "../../redux/cart/cart.action";
+import {cartActionToggle} from "../../redux/cart/cart.action";
 
 import "./cart-icon.styles.scss";
 

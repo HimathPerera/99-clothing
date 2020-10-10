@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assests/99.svg";
 import { auth } from "../../firebase/firebase.util";
+
 import { connect } from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
@@ -36,9 +37,15 @@ const Header = ({ currentUser, hidden }) => {
             SIGN IN
           </Link>
         )}
-        {currentUser ? <Link to="/">{currentUser.displayName}</Link> : <></>}
+        {currentUser ? (
+          <Link to="/" className="option">
+            {currentUser.displayName.toUpperCase()}
+          </Link>
+        ) : (
+          <></>
+        )}
 
-        <CartIcon />
+        <CartIcon className="option" />
       </div>
       {hidden ? null : <CartDropDown />}
     </div>
