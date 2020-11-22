@@ -14,6 +14,9 @@ import {selectCurrentUser} from '../../redux/user/user.selector'
 import "./header.style.scss";
 
 const Header = ({ currentUser, hidden }) => {
+  if(currentUser){
+    var nameInBlock = currentUser.displayName.toUpperCase()
+  }
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -43,7 +46,7 @@ const Header = ({ currentUser, hidden }) => {
         )}
         {currentUser ? (
           <Link to="/" className="option">
-            {currentUser.displayName.toUpperCase()}
+            {nameInBlock}
           </Link>
         ) : (
           <></>
