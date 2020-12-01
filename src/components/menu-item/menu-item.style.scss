@@ -60,9 +60,9 @@ $break-small: 415px;
     justify-content: center;
     border: 1px solid black;
     background-color: white;
-    opacity: 70%;
     font-family: "Open Sans Condensed", sans-serif;
     position: absolute;
+    opacity: 70% !important;
 
     .title {
       font-weight: bold;
