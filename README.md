@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is build with create-react-app and hosted with Heroku [99-clothing-webApp](https://clothing-99.herokuapp.com/).
 
 ## Available Scripts
 
