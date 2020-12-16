@@ -4,13 +4,16 @@ const selectShop = (state) => state.shop;
 
 export const selectShopItems = createSelector(
   [selectShop],
-  (shop) => shop.shopData
+  (shop) => shop.collections
 );
 
 export const selectShopItemsForOverview = createSelector(
   [selectShopItems],
-  (shopData) => Object.keys(shopData).map((key) => shopData[key])
+  (shopData) =>
+    shopData ? Object.keys(shopData).map((key) => shopData[key]) : []
 );
 
 export const selectCollection = (collectionUrlParam) =>
-  createSelector([selectShopItems], (shopData) => shopData[collectionUrlParam]);
+  createSelector([selectShopItems], (shopData) =>
+    shopData ? shopData[collectionUrlParam] : null
+  );

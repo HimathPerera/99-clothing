@@ -7,10 +7,8 @@ import { selectCollection } from "../../redux/shop/shop.selector";
 import "./collection.styles.scss";
 
 const CollectionPage = ({ collection }) => {
-  const { title } = collection;
   return (
     <div className="collection-page">
-      <h2 className="title">{title}</h2>
       <div className="items">
         {collection ? (
           collection.items.map((items) => (

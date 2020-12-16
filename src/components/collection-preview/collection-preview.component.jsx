@@ -1,19 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import CollectionItem from "../collection-item/collection-item.component";
+
 import "./collection-preview.styles.scss";
 
 export default function Collection({ title, items }) {
   return (
     <div className="collection-preview">
-      <h1 className="title">{title.toUpperCase()}</h1>
+      <Link className="title-container" to={`/shop/${title.toLowerCase()}`}>
+        <h1 className="title">{title.toUpperCase()}</h1>
+      </Link>
       <div className="preview">
         {items
           .filter((item, index) => index < 4)
           .map((item) => (
-            <CollectionItem
-              key={item.id}
-              item={item}
-            />
+            <CollectionItem key={item.id} item={item} />
           ))}
       </div>
     </div>
