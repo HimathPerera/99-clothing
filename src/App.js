@@ -4,15 +4,15 @@ import Hompage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up-page/sign-in-and-sign-up-page.component";
-import CheckoutPage from './pages/checkout/checkout.component'
+import CheckoutPage from "./pages/checkout/checkout.component";
 
 import { auth, createUserProfile } from "./firebase/firebase.util";
 
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.action";
 
-import { selectCurrentUser } from './redux/user/user.selector'
-import { createStructuredSelector} from 'reselect'
+import { selectCurrentUser } from "./redux/user/user.selector";
+import { createStructuredSelector } from "reselect";
 
 import "./App.css";
 
@@ -54,7 +54,7 @@ function App({ setCurrentUser, currentUser }) {
   );
 }
 const mapStateToProps = createStructuredSelector({
-  currentUser:selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

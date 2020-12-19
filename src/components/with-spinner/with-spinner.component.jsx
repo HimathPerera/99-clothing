@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./with-spinner.styles.css";
+import "./with-spinner.styles.scss";
 
 const WithSpinner = (WrappedComponent) => {
   const Spinner = ({ isLoading, ...otherPrpos }) => {
